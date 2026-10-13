@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f0e7" />
+    <title>SIDE QUEST — University needs more side quests.</title>
+    <meta
+      name="description"
+      content="Live university like an open world. Explore campus, meet people and find club and society events in one place. Side Quest starts at USYD. Join the beta waitlist."
+    />
+    <meta
+      property="og:title"
+      content="SIDE QUEST — University needs more side quests."
+    />
+    <meta
+      property="og:description"
+      content="Explore campus. Meet people. Club and society events, all in one place. The first Side Quest beta opens at USYD. More universities coming soon."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://side-quest-sigma-liard.vercel.app/assets/campus-poster.webp"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link
+      rel="preload"
+      href="/fonts/bricolage-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/assets/campus-overhead.webp" as="image" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/campaign.css" />
+    <link rel="stylesheet" href="/src/chapter-art.css" />
+    <link rel="stylesheet" href="/src/campus-arc.css" />
+    <link rel="stylesheet" href="/src/positioning.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to campus</a>
+    <svg
+      class="icon-definitions"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M5 19 19 5M6 5h13v13" />
+        </symbol>
+        <symbol id="i-coffee" viewBox="0 0 24 24">
+          <path
+            d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8ZM17 9h2a3 3 0 0 1 0 6h-2M8 3v2M13 3v2"
+          />
+        </symbol>
+        <symbol id="i-camera" viewBox="0 0 24 24">
+          <path
+            d="M8 6 9.5 3h5L16 6h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4Z"
+          />
+          <circle cx="12" cy="13.5" r="4" />
+        </symbol>
+        <symbol id="i-tennis" viewBox="0 0 24 24">
+          <ellipse
+            cx="14.5"
+            cy="8"
+            rx="5.5"
+            ry="7"
+            transform="rotate(35 14.5 8)"
+          />
+          <path
+            d="m10 14-6.5 8L1 20l6.5-8M12 3l8 6M10 6l8 6M9 10l7-8M12 14l7-9"
+          />
+        </symbol>
+        <symbol id="i-ball" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path
+            d="M3 12h18M12 3v18M5.5 5.5c7 3 7 10 0 13M18.5 5.5c-7 3-7 10 0 13"
+          />
+        </symbol>
+        <symbol id="i-book" viewBox="0 0 24 24">
+          <path
+            d="M12 5v16M12 5C8 2 4 3 2 4v16c4-2 7-1 10 1 3-2 6-3 10-1V4c-2-1-6-2-10 1Z"
+          />
+        </symbol>
+        <symbol id="i-music" viewBox="0 0 24 24">
+          <path d="M9 18V5l12-3v13M9 8l12-3" />
+          <ellipse cx="5.5" cy="18" rx="3.5" ry="3" />
+          <ellipse cx="17.5" cy="15" rx="3.5" ry="3" />
+        </symbol>
+        <symbol id="i-people" viewBox="0 0 24 24">
+          <circle cx="8" cy="7" r="3" />
+          <path
+            d="M2 21v-3a6 6 0 0 1 12 0v3H2ZM16 4a3 3 0 0 1 0 6M17 13a5 5 0 0 1 5 5v3h-5"
+          />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+          <path d="M19 9c0 6-7 13-7 13S5 15 5 9a7 7 0 1 1 14 0Z" />
+          <circle cx="12" cy="9" r="2.5" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+        <symbol id="i-flag" viewBox="0 0 24 24">
+          <path d="M5 22V3c5-3 9 3 15 0v11c-6 3-10-3-15 0M12 6v5M9.5 8.5h5" />
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24">
+          <path
+            d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="site-header" id="site-header">
+      <a class="wordmark" href="#top" aria-label="Side Quest home"
+        ><img
+          src="/assets/brand-wordmark-nav.webp"
+          width="480"
+          height="227"
+          alt="Side Quest"
+      /></a>
+      <nav aria-label="Explore Side Quest">
+        <a href="#world">World</a><a href="#events">Events</a
+        ><a href="#people">People</a>
+      </nav>
+      <a class="nav-waitlist" href="#beta-form"
+        >Join waitlist <span aria-hidden="true">↗</span></a
+      >
+      <div id="page-progress" aria-hidden="true"></div>
+    </header>
+    <main id="main">
+      <div class="journey-layer" aria-hidden="true">
+        <svg id="journey-route" preserveAspectRatio="none">
+          <path id="journey-route-track" />
+          <path id="journey-route-progress" />
+        </svg>
+        <img
+          id="journey-walker"
+          src="/assets/character-walker-front.webp"
+          data-front-src="/assets/character-walker-front.webp"
+          data-back-src="/assets/character-walker.webp"
+          width="120"
+          height="229"
+          alt=""
+          hidden
+        />
+      </div>
+      <section
+        class="hero section-pad"
+        id="top"
+        data-chapter="00 / THE DOOR"
+        aria-labelledby="hero-title"
+      >
+        <div class="section-meta">
+          <span class="mono">SAME CAMPUS. DIFFERENT POSSIBILITIES.</span
+          ><span class="mono">USYD / FIRST EDITION / 2026</span>
+        </div>
+        <div class="hero-poster">
+          <h1 id="hero-title">
+            <span class="hero-first">UNIVERSITY</span
+            ><span class="hero-second">NEEDS MORE</span
+            ><span class="hero-third"
+              ><span>SIDE</span> <span>QUESTS.</span></span
+            >
+          </h1>
+          <div class="hero-portal" id="hero-portal">
+            <div class="hero-art">
+              <img
+                id="hero-art"
+                src="/assets/campus-overhead.webp"
+                width="916"
+                height="766"
+                fetchpriority="high"
+                alt="An illustrated campus alive with students, jacarandas, sandstone, a café and sports courts"
+              />
+            </div>
+            <a class="hero-discovery" href="#quests" data-enter-quest="1"
+              ><svg class="icon"><use href="#i-ball" /></svg
+              ><span>GOT AN HOUR?<br />TAKE A SIDE QUEST.</span
+              ><span aria-hidden="true">↗</span></a
+            >
+            <img
+              class="hero-flag"
+              src="/assets/flag.webp"
+              width="228"
+              height="224"
+              alt=""
+            />
+          </div>
+          <img
+            class="hero-campus-walker"
+            src="/assets/campus-walker.webp"
+            width="279"
+            height="464"
+            alt="An illustrated student walking into the Side Quest campus"
+          />
+        </div>
+        <div class="hero-bottom">
+          <p>
+            Explore campus. Meet people.<br />Club and society events, all in
+            one place.
+          </p>
+          <a class="enter-link" href="#world"
+            >ENTER CAMPUS <span aria-hidden="true">↓</span></a
+          ><a class="hero-beta" href="#beta-form"
+            >JOIN THE USYD BETA <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+
+      <section
+        class="world section-pad"
+        id="world"
+        data-chapter="01 / THE CAMPUS"
+        aria-labelledby="world-title"
+      >
+        <div class="section-meta">
+          <span class="mono">01 / EXPLORE YOUR CAMPUS</span>
+          <span class="mono">AN INTERACTIVE WORLD PREVIEW</span>
+        </div>
+        <div class="world-heading reveal">
+          <h2 id="world-title">
+            REAL CAMPUS.<br /><span class="serif-note">OPEN WORLD.</span>
+          </h2>
+          <div class="world-intro">
+            <p>You move.<br />Your character does too.</p>
+            <p class="world-explainer">
+              Discover side quests, people and hidden campus relics. Take a new
+              route. There's more to uni than your timetable.
+            </p>
+            <span class="mono">PICK A MARKER. TAKE A DETOUR.</span>
+          </div>
+        </div>
+        <div class="world-stage reveal">
+          <div class="map-heading">
+            <span class="mono"
+              ><i class="status-dot"></i>
+              <span id="world-region-title">USYD / CAMPERDOWN</span></span
+            ><span id="world-found" class="mono">0 / 6 QUESTS FOUND</span>
+          </div>
+          <div
+            class="world-viewport"
+            id="world-viewport"
+            role="group"
+            aria-label="Explorable illustrated campus. Drag horizontally or use the region and zoom buttons."
+          >
+            <div class="world-plane" id="world-plane">
+              <img
+                class="world-image"
+                src="/assets/campus-overhead.webp"
+                width="916"
+                height="766"
+                loading="lazy"
+                alt="A Side Quest campus map with paths, a fountain, cafés, courts, campus buildings and students"
+                draggable="false"
+              />
+              <span class="map-source-label" aria-hidden="true">SPORTS</span>
+              <svg
+                class="world-route"
+                id="world-route"
+                viewBox="0 0 1000 836"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  class="route-shadow"
+                  id="world-route-shadow"
+                  d="M500 627L500 627"
+                />
+                <path id="world-route-path" d="M500 627L500 627" />
+              </svg>
+              <button
+                class="world-pin pin-coffee"
+                data-world-quest="0"
+                style="--pin-x: 83%; --pin-y: 44%"
+                aria-label="Discover Coffee Run"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-coffee" /></svg
+                ><span>COFFEE?</span>
+              </button>
+              <button
+                class="world-pin pin-tennis"
+                data-world-quest="1"
+                style="--pin-x: 71%; --pin-y: 64%"
+                aria-label="Discover a game at the sports courts"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-ball" /></svg
+                ><span>ONE MORE?</span>
+              </button>
+              <button
+                class="world-pin pin-music"
+                data-world-quest="2"
+                style="--pin-x: 51%; --pin-y: 42%"
+                aria-label="Discover music at the Quad"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-music" /></svg
+                ><span>OVER THERE</span>
+              </button>
+              <button
+                class="world-pin pin-study"
+                data-world-quest="3"
+                style="--pin-x: 82%; --pin-y: 86%"
+                aria-label="Discover Fisher Library"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-book" /></svg
+                ><span>FISHER.</span>
+              </button>
+              <button
+                class="world-pin pin-photo"
+                data-world-quest="4"
+                style="--pin-x: 29%; --pin-y: 32%"
+                aria-label="Discover a Relic Hunt"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-spark" /></svg
+                ><span>RELICS?</span>
+              </button>
+              <button
+                class="world-pin pin-society"
+                data-world-quest="5"
+                style="--pin-x: 27%; --pin-y: 68%"
+                aria-label="Discover a society event"
+                aria-pressed="false"
+              >
+                <svg class="icon"><use href="#i-flag" /></svg
+                ><span>YOUR PEOPLE</span>
+              </button>
+              <button
+                class="world-secret"
+                id="world-secret"
+                style="--pin-x: 12%; --pin-y: 77%"
+                aria-label="Inspect the hidden compass"
+                aria-pressed="false"
+              >
+                <img
+                  src="/assets/collectible-compass.webp"
+                  width="99"
+                  height="123"
+                  alt=""
+                />
+              </button>
+              <div class="world-player" id="world-player" aria-hidden="true">
+                <span></span
+                ><img
+                  src="/assets/character-walker.webp"
+                  width="120"
+                  height="229"
+                  alt=""
+                />
+              </div>
+            </div>
+            <span class="map-compass mono" aria-hidden="true">N<br />↑</span>
+            <span class="map-drag-hint mono">DRAG TO WANDER ↔</span>
+            <div
+              class="map-tools"
+              role="group"
+              aria-label="Campus map controls"
+            >
+              <button id="map-zoom-out" aria-label="Zoom out">−</button
+              ><button id="map-reset" aria-label="Show the whole campus">
+                <svg class="icon"><use href="#i-pin" /></svg></button
+              ><button id="map-zoom-in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+          <div class="map-bottom">
+            <div class="world-preview">
+              <span class="mono" id="world-active-location"
+                >YOUR NEXT DETOUR</span
+              >
+              <h3 id="world-active-title">
+                Something is<br />happening over there.
+              </h3>
+              <p id="world-active-note">
+                Six small reasons to take the long way.
+              </p>
+              <a class="text-link" id="world-open-quest" href="#quests"
+                >EXPLORE THE QUEST <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="map-actions">
+              <button class="detour-button" id="map-detour">
+                Take a detour <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+              <p class="mono" id="world-secret-message" hidden>
+                A LITTLE CURIOSITY GOES A LONG WAY.
+              </p>
+              <span class="mono">WORLD PREVIEW / NOT A LIVE CAMPUS FEED</span>
+            </div>
+          </div>
+        </div>
+        <p
+          class="sr-only"
+          id="world-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <div
+          class="region-trail"
+          role="group"
+          aria-label="Explore campus regions"
+        >
+          <button data-map-region="quad" aria-pressed="false">
+            <small>01</small>The Quad</button
+          ><button data-map-region="fisher" aria-pressed="false">
+            <small>02</small>Fisher</button
+          ><button data-map-region="engineering" aria-pressed="false">
+            <small>03</small>Engineering</button
+          ><button data-map-region="eastern" aria-pressed="false">
+            <small>04</small>Eastern Avenue</button
+          ><button data-map-region="manning" aria-pressed="false">
+            <small>05</small>Manning</button
+          ><button data-map-region="law" aria-pressed="false">
+            <small>06</small>Law Lawns
+          </button>
+        </div>
+        <div class="region-profile" aria-labelledby="field-region-title">
+          <div class="region-profile-copy">
+            <span class="mono">YOUR ATLAS / PLACES + RELICS</span>
+            <h3 id="field-region-title">THE QUAD</h3>
+            <p id="field-region-note">
+              Take the long way past the sandstone. Find a quest, a new face or
+              a landmark for your Atlas.
+            </p>
+            <a class="text-link" id="field-region-link" href="#world-viewport"
+              >RETURN TO THE MAP <span aria-hidden="true">↑</span></a
+            >
+          </div>
+          <figure class="region-profile-art">
+            <img
+              id="field-region-image"
+              src="/assets/quad-landmark.webp"
+              width="272"
+              height="362"
+              loading="lazy"
+              draggable="false"
+              alt="The sandstone Quad towers over jacarandas in the Side Quest campus."
+            />
+            <figcaption class="mono" id="field-region-caption">
+              01 / CAMPERDOWN
+            </figcaption>
+            <img
+              class="region-profile-object"
+              id="field-region-object"
+              src="/assets/collectible-landmark.webp"
+              width="88"
+              height="114"
+              loading="lazy"
+              draggable="false"
+              alt="An illustrated campus landmark collectible."
+            />
+          </figure>
+          <span class="region-profile-footnote mono"
+            >FAMILIAR PLACES.<br />UNFAMILIAR POSSIBILITIES.</span
+          >
+        </div>
+      </section>
+
+      <section
+        class="campus-events section-pad"
+        id="events"
+        data-chapter="02 / CLUBS + SOCIETIES"
+        aria-labelledby="events-title"
+      >
+        <div class="section-meta">
+          <span class="mono">02 / CLUBS + SOCIETIES</span>
+          <span class="mono">YOUR UNIVERSITY. ALL IN ONE PLACE.</span>
+        </div>
+        <div class="events-heading">
+          <div>
+            <h2 id="events-title">
+              YOUR UNI.<br /><span>ONE QUEST LOG.</span>
+            </h2>
+            <p>
+              Club and society events. The time, the place, the people. One
+              dedicated uni platform. No more digging through Instagram stories.
+            </p>
+          </div>
+          <figure class="events-art">
+            <img
+              src="/assets/event-society-fair.webp"
+              width="365"
+              height="152"
+              loading="lazy"
+              alt="Students exploring colourful club and society stalls in the Side Quest campus"
+            />
+            <figcaption class="mono">
+              THE SOCIETY FAIR IS A SIDE QUEST TOO.
+            </figcaption>
+            <img
+              class="events-flag"
+              src="/assets/flag.webp"
+              width="228"
+              height="224"
+              loading="lazy"
+              alt=""
+            />
+          </figure>
+        </div>
+        <div class="events-log">
+          <div class="events-log-label mono">
+            <span>A LOOK AT YOUR QUEST LOG</span
+            ><span>EXAMPLE EVENTS / NOT A LIVE SCHEDULE</span>
+          </div>
+          <details name="campus-events">
+            <summary>
+              <span class="event-number mono">01</span
+              ><span class="event-name">SOCIETY FAIR</span
+              ><span class="event-when mono">12–2 PM<span>THE QUAD</span></span
+              ><span class="event-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="event-details">
+              <p>
+                Find a club you didn't know existed. Meet the people behind it.
+                Stay for the next thing.
+              </p>
+              <dl>
+                <div>
+                  <dt>THE PLAN</dt>
+                  <dd>Club and society stalls</dd>
+                </div>
+                <div>
+                  <dt>BRING</dt>
+                  <dd>Your curiosity. A friend, if you like.</dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+          <details name="campus-events">
+            <summary>
+              <span class="event-number mono">02</span
+              ><span class="event-name">BOARD GAMES</span
+              ><span class="event-when mono">6 PM<span>MANNING</span></span
+              ><span class="event-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="event-details">
+              <p>
+                A society night with an easy way into the conversation. Find a
+                table. Join a game.
+              </p>
+              <dl>
+                <div>
+                  <dt>THE PLAN</dt>
+                  <dd>Open games with other students</dd>
+                </div>
+                <div>
+                  <dt>BRING</dt>
+                  <dd>Yourself. Being good is optional.</dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+          <details name="campus-events">
+            <summary>
+              <span class="event-number mono">03</span
+              ><span class="event-name">OPEN MIC</span
+              ><span class="event-when mono">5 PM<span>MANNING</span></span
+              ><span class="event-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="event-details">
+              <p>
+                Find the music night you would've missed. Play something or come
+                along and listen.
+              </p>
+              <dl>
+                <div>
+                  <dt>THE PLAN</dt>
+                  <dd>Student performances</dd>
+                </div>
+                <div>
+                  <dt>BRING</dt>
+                  <dd>A song. Or just an audience.</dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </div>
+        <div class="events-footer">
+          <p>
+            Events are side quests.<br /><strong>Showing up earns XP.</strong>
+          </p>
+          <a class="text-link" href="#quests" data-enter-quest="5"
+            >PREVIEW THE SOCIETY QUEST <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+
+      <section
+        class="campus-arc section-pad"
+        id="your-story"
+        data-campus-arc
+        data-chapter="03 / YOUR CAMPUS ARC"
+        aria-labelledby="arc-title"
+      >
+        <div class="section-meta">
+          <span class="mono">03 / YOUR CAMPUS ARC</span
+          ><span class="mono">ONE POSSIBLE PLAYTHROUGH</span>
+        </div>
+        <div class="arc-heading">
+          <h2 class="arc-title" id="arc-title">
+            <span data-arc-title-first>CAMPUS</span
+            ><span data-arc-title-second>NPC.</span>
+          </h2>
+          <div class="arc-caption">
+            <span class="mono">PICK YOUR DETOURS ↓</span>
+            <p data-arc-copy>Lecture. Home. Repeat. Or take a side quest.</p>
+          </div>
+        </div>
+        <div class="arc-journey">
+          <div class="arc-track" data-arc-track aria-hidden="true">
+            <span class="arc-progress" data-arc-progress></span
+            ><img
+              class="arc-avatar"
+              data-arc-avatar
+              src="/assets/character-walker.webp"
+              width="120"
+              height="229"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="arc-stops">
+            <button
+              class="arc-stop"
+              type="button"
+              data-arc-choice="explore"
+              aria-pressed="false"
+              disabled
+            >
+              <span class="arc-object"
+                ><img
+                  src="/assets/collectible-map.webp"
+                  width="89"
+                  height="88"
+                  alt=""
+                  loading="lazy"
+                  decoding="async" /></span
+              ><span class="arc-stop-copy"
+                ><span class="arc-stop-title">EXPLORE</span
+                ><span class="arc-stop-detail"
+                  >New places. Relics for your Atlas.</span
+                ></span
+              >
+            </button>
+            <button
+              class="arc-stop"
+              type="button"
+              data-arc-choice="meet"
+              aria-pressed="false"
+              disabled
+            >
+              <span class="arc-object"
+                ><img
+                  src="/assets/collectible-friends.webp"
+                  width="85"
+                  height="67"
+                  alt=""
+                  loading="lazy"
+                  decoding="async" /></span
+              ><span class="arc-stop-copy"
+                ><span class="arc-stop-title">MEET</span
+                ><span class="arc-stop-detail"
+                  >New people. A reason to say hello.</span
+                ></span
+              >
+            </button>
+            <button
+              class="arc-stop"
+              type="button"
+              data-arc-choice="play"
+              aria-pressed="false"
+              disabled
+            >
+              <span class="arc-object"
+                ><img
+                  src="/assets/object-sneakers.webp"
+                  width="46"
+                  height="38"
+                  alt=""
+                  loading="lazy"
+                  decoding="async" /></span
+              ><span class="arc-stop-copy"
+                ><span class="arc-stop-title">PLAY</span
+                ><span class="arc-stop-detail"
+                  >A game between classes.</span
+                ></span
+              >
+            </button>
+            <button
+              class="arc-stop"
+              type="button"
+              data-arc-choice="show"
+              aria-pressed="false"
+              disabled
+            >
+              <span class="arc-object"
+                ><img
+                  src="/assets/collectible-star.webp"
+                  width="63"
+                  height="64"
+                  alt=""
+                  loading="lazy"
+                  decoding="async" /></span
+              ><span class="arc-stop-copy"
+                ><span class="arc-stop-title">SHOW UP</span
+                ><span class="arc-stop-detail"
+                  >Club nights. Society events. Earn XP.</span
+                ></span
+              >
+            </button>
+          </div>
+        </div>
+        <div class="arc-controls">
+          <p class="mono"><span data-arc-count>0 / 4</span> DETOURS TAKEN</p>
+          <button class="arc-reset" type="button" data-arc-reset disabled>
+            RESTART PLAYTHROUGH ↺
+          </button>
+        </div>
+        <p class="arc-aside mono">YES, IT'S A LITTLE LARP.</p>
+        <p
+          class="sr-only"
+          data-arc-live
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+      </section>
+
+      <section
+        class="quests section-pad"
+        id="quests"
+        data-chapter="04 / BETWEEN CLASSES"
+        aria-labelledby="quests-title"
+      >
+        <div class="section-meta">
+          <span class="mono">04 / AN HOUR BETWEEN CLASSES?</span>
+          <h2 class="mono" id="quests-title">MIGHT AS WELL SIDE QUEST.</h2>
+        </div>
+        <div class="quest-stage" id="quest-stage" data-quest="0">
+          <div class="quest-copy">
+            <div class="quest-caption">
+              <span class="mono" id="quest-category">MEET SOMEONE NEW</span
+              ><span class="mono" id="quest-place">EASTERN AVENUE</span>
+            </div>
+            <h3 id="quest-title">COFFEE<br />RUN.</h3>
+            <p id="quest-copy">
+              Meet someone new over coffee. One café. One easy reason to say
+              hello.
+            </p>
+            <button
+              class="quest-save text-link"
+              id="quest-save"
+              aria-pressed="false"
+            >
+              SAVE FOR LATER <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <div class="quest-artwork" id="quest-artwork">
+            <span class="quest-number" id="quest-number" aria-hidden="true"
+              >01</span
+            >
+            <figure class="quest-image-frame">
+              <img
+                id="quest-art"
+                src="/assets/cafe-gathering.webp"
+                width="475"
+                height="270"
+                loading="lazy"
+                draggable="false"
+                alt="Four Side Quest students sharing coffee at a sunny campus café"
+              />
+            </figure>
+            <img
+              class="quest-object"
+              id="quest-object"
+              src="/assets/collectible-coffee-cup.webp"
+              width="58"
+              height="69"
+              loading="lazy"
+              alt="An illustrated coffee collectible"
+            /><span class="quest-art-note mono" id="quest-art-note"
+              >SMALL QUEST. GOOD COMPANY.</span
+            >
+          </div>
+        </div>
+        <div class="quest-controls">
+          <div
+            class="quest-index"
+            id="quest-tabs"
+            role="group"
+            aria-label="Choose a quest"
+          >
+            <button data-quest="0" aria-label="Coffee Run" aria-pressed="true">
+              01</button
+            ><button
+              data-quest="1"
+              aria-label="Sports courts"
+              aria-pressed="false"
+            >
+              02</button
+            ><button
+              data-quest="2"
+              aria-label="Music at the Quad"
+              aria-pressed="false"
+            >
+              03</button
+            ><button
+              data-quest="3"
+              aria-label="Fisher Library"
+              aria-pressed="false"
+            >
+              04</button
+            ><button
+              data-quest="4"
+              aria-label="Relic Hunt"
+              aria-pressed="false"
+            >
+              05</button
+            ><button
+              data-quest="5"
+              aria-label="Society event"
+              aria-pressed="false"
+            >
+              06
+            </button>
+          </div>
+          <span class="mono" id="quest-saved-count"
+            >YOUR AFTERNOON IS STILL OPEN.</span
+          >
+          <div class="quest-arrows">
+            <button id="quest-prev" aria-label="Previous quest">←</button
+            ><button id="quest-next" aria-label="Next quest">→</button>
+          </div>
+        </div>
+        <p class="sr-only" role="status" id="quest-status"></p>
+      </section>
+
+      <section
+        class="people section-pad"
+        id="people"
+        data-chapter="05 / MEET YOUR PEOPLE"
+        aria-labelledby="people-title"
+      >
+        <div class="section-meta">
+          <span class="mono">05 / MEET YOUR PEOPLE</span
+          ><span class="mono">A REASON TO SAY HELLO.</span>
+        </div>
+        <div class="people-heading reveal">
+          <h2 id="people-title">
+            FIND YOUR<br /><span class="serif-note">PEOPLE.</span>
+          </h2>
+          <p>
+            Meet students who share your classes, interests or societies. Pick a
+            quest together.<span class="people-explainer"
+              >Nearby now, or crossed paths before. Start with something in
+              common.</span
+            >
+          </p>
+        </div>
+        <div class="people-scene" id="people-scene" data-mode="nearby">
+          <svg
+            class="people-paths"
+            viewBox="0 0 1000 430"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M0 280C140 100 300 350 470 180S710 380 1000 90" />
+            <path d="M0 90C220 400 320 50 470 180S760 10 1000 330" />
+          </svg>
+          <div class="person-you">
+            <img
+              src="/assets/avatar-rohan.webp"
+              width="62"
+              height="62"
+              loading="lazy"
+              alt="Your illustrated campus avatar"
+            /><span class="mono">YOU</span>
+          </div>
+          <figure class="person-maya">
+            <img
+              src="/assets/maya-portrait.webp"
+              width="260"
+              height="255"
+              loading="lazy"
+              alt="Maya, a Side Quest student with a coffee, outside the Quad"
+            />
+            <figcaption class="mono">MAYA / QMB / SECOND YEAR</figcaption>
+          </figure>
+          <span class="people-crossing mono" id="people-crossing"
+            >SAME CAMPUS.<br />SOMETHING IN COMMON.</span
+          >
+          <div class="people-context">
+            <span class="mono" id="people-context-label"
+              >A SHARED INTEREST</span
+            >
+            <p id="people-shared-reason">
+              You both take coffee quite seriously.
+            </p>
+            <span class="context-mark" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <div class="people-controls">
+          <div
+            class="people-modes"
+            role="group"
+            aria-label="People discovery preview"
+          >
+            <button class="people-tab" id="people-nearby" aria-pressed="true">
+              Nearby people</button
+            ><button
+              class="people-tab"
+              id="people-crossed"
+              aria-pressed="false"
+            >
+              Crossed paths
+            </button>
+          </div>
+          <div
+            class="context-options"
+            role="group"
+            aria-label="Find what you share"
+          >
+            <button data-context="classes" aria-pressed="false">Classes</button
+            ><button data-context="interests" aria-pressed="true">
+              Interests</button
+            ><button data-context="societies" aria-pressed="false">
+              Societies</button
+            ><button data-context="quests" aria-pressed="false">Quests</button
+            ><button data-context="places" aria-pressed="false">Places</button>
+          </div>
+        </div>
+        <p class="sr-only" id="people-status" role="status"></p>
+      </section>
+      <div class="presence section-pad">
+        <div class="presence-stamp">
+          <svg class="icon"><use href="#i-check" /></svg
+          ><span class="mono">XP<br />EARNED.</span>
+        </div>
+        <p>
+          Meet people. Play a game. Go to the event.<br /><strong
+            >Show up. Level up.</strong
+          >
+        </p>
+        <span class="mono">POINTS FOR ACTUALLY TAKING PART.</span>
+      </div>
+
+      <section
+        class="waitlist section-pad"
+        id="waitlist"
+        data-chapter="06 / YOUR CAMPUS IS NEXT"
+        aria-labelledby="waitlist-title"
+      >
+        <div class="section-meta">
+          <span class="mono">06 / START AT USYD</span>
+          <span class="mono">FIRST SERVER / UNIVERSITY OF SYDNEY</span>
+        </div>
+        <div class="waitlist-poster reveal">
+          <img
+            class="waitlist-campus"
+            src="/assets/campus-poster.webp"
+            width="916"
+            height="751"
+            loading="lazy"
+            alt="The Side Quest campus filled with places to go, people to meet and quests to discover"
+          />
+          <h2 id="waitlist-title">
+            <span>FIRST SERVER.</span><strong>USYD.</strong>
+          </h2>
+          <img
+            class="waitlist-friends"
+            src="/assets/people-group-cutout.webp"
+            width="435"
+            height="244"
+            loading="lazy"
+            alt="A group of Side Quest students sitting together on campus"
+          /><img
+            class="waitlist-sticker"
+            src="/assets/brand-sticker.webp"
+            width="269"
+            height="257"
+            loading="lazy"
+            alt=""
+          /><span class="waitlist-note mono"
+            >YOUR USUAL CAMPUS.<br />A VERY DIFFERENT AFTERNOON.</span
+          >
+        </div>
+        <div class="waitlist-bottom">
+          <div class="waitlist-intro">
+            <span class="eyebrow">BETA WAITLIST / NOW OPEN</span>
+            <p>Be there<br /><span class="serif-note">from day one.</span></p>
+            <p class="waitlist-rollout">
+              University of Sydney first.<br />More universities coming soon.
+            </p>
+          </div>
+          <form
+            id="beta-form"
+            class="waitlist-form"
+            method="post"
+            action="/api/beta"
+          >
+            <noscript><p>Enable JavaScript to join the waitlist.</p></noscript>
+            <div class="form-row">
+              <div>
+                <label for="beta-name">YOUR NAME</label
+                ><input
+                  id="beta-name"
+                  name="name"
+                  autocomplete="given-name"
+                  maxlength="100"
+                  required
+                  placeholder="What should we call you?"
+                />
+              </div>
+              <div>
+                <label for="beta-email">EMAIL ADDRESS</label
+                ><input
+                  id="beta-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                  placeholder="you@uni.edu.au"
+                />
+              </div>
+            </div>
+            <div class="form-campus">
+              <label for="beta-campus">YOUR CAMPUS</label
+              ><select name="campus" id="beta-campus">
+                <option value="USYD">University of Sydney</option>
+                <option value="Other">Somewhere else — keep me posted</option>
+              </select>
+            </div>
+            <div class="honeypot" aria-hidden="true">
+              <label for="beta-honeypot">Website</label
+              ><input
+                id="beta-honeypot"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <button class="form-submit" id="beta-submit" type="submit" disabled>
+              JOIN THE WAITLIST <span aria-hidden="true">↗</span>
+            </button>
+            <p
+              id="beta-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <small>Beta updates only. No campus-wide reply-all.</small>
+          </form>
+        </div>
+        <div class="campus-notes">
+          <div class="campus-notes-heading">
+            <span class="mono">A FEW THINGS TO KNOW</span>
+            <h3>Before<br /><span class="serif-note">you go.</span></h3>
+            <img
+              src="/assets/people-lookout.webp"
+              width="325"
+              height="212"
+              loading="lazy"
+              alt="Three students looking out over the colourful Side Quest campus"
+            />
+          </div>
+          <div class="campus-notes-answers">
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">01</span>How does Side Quest work?<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                Your real campus becomes an open world. As you walk, GPS moves
+                your character with you. Find quests, campus relics, events and
+                people nearby. Take a detour between classes.
+              </p>
+            </details>
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">02</span>What about clubs and societies?<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                Their events are side quests too. Find the time, place and
+                details in one dedicated university platform, instead of
+                searching Instagram. Attend, check in and earn XP for taking
+                part.
+              </p>
+            </details>
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">03</span>XP? Relics? Explain.<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                XP is your progress through campus life: meet people, play a
+                game or show up to an event. Explore to find relics and
+                landmarks for your Atlas. A little LARP. A lot more to do.
+              </p>
+            </details>
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">04</span>Can I create a side quest?<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                Pick a campus spot and say what you’re doing. Coffee, a study
+                session, a game — or an idea of your own. Make it public or
+                invite a few people.
+              </p>
+            </details>
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">05</span>How do I meet people?<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                Find students nearby or people you’ve crossed paths with. Shared
+                classes, interests and societies give you a starting point. Pick
+                a quest together.
+              </p>
+            </details>
+            <details name="campus-notes">
+              <summary>
+                <span class="mono">06</span>When can I play at my uni?<span
+                  class="answer-toggle"
+                  aria-hidden="true"
+                  >+</span
+                >
+              </summary>
+              <p>
+                The first beta opens at the University of Sydney. More
+                universities coming soon. Join the waitlist and we’ll email when
+                it’s ready. Choose “Somewhere else” for future campus updates.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer section-pad">
+      <a class="wordmark" href="#top" aria-label="Side Quest home"
+        ><img
+          src="/assets/brand-wordmark-nav.webp"
+          width="480"
+          height="227"
+          loading="lazy"
+          alt="Side Quest" /></a
+      ><span class="mono">A NEW LAYER OVER CAMPUS LIFE.</span
+      ><a class="mono" href="#top">BACK TO CAMPUS ↑</a
+      ><span class="mono">© SIDE QUEST 2026</span>
+    </footer>
+  </body>
+</html>

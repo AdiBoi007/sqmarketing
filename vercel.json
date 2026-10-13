@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run check && npm run build",
+  "outputDirectory": "dist",
+  "regions": ["syd1"],
+  "functions": {
+    "api/beta.js": {
+      "maxDuration": 15
+    }
+  }
+}

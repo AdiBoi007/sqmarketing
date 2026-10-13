@@ -1,0 +1,629 @@
+/* A changing exhibition: the artwork sets the scale, rather than a card. */
+#quests {
+  background: #202620;
+  color: var(--paper);
+  border: 0;
+  padding-block: clamp(64px, 7vw, 116px) 38px;
+}
+#quests .section-meta {
+  align-items: baseline;
+  opacity: 0.76;
+}
+#quests .quest-stage {
+  grid-template-columns: 55% 45%;
+  min-height: 580px;
+  margin-top: 35px;
+  align-items: center;
+}
+#quests .quest-copy {
+  padding: 24px 6% 24px 0;
+  min-height: 0;
+}
+#quests .quest-caption {
+  gap: 6px;
+  margin-bottom: 28px;
+}
+#quests .quest-caption .mono {
+  font-size: 10px;
+}
+#quests #quest-place {
+  color: #c2c8b9;
+}
+#quests .quest-copy h3 {
+  font-size: clamp(90px, 11vw, 210px);
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+  min-height: 0;
+}
+#quests .quest-copy p {
+  max-width: 285px;
+  font-size: 15px;
+  color: #d7dbce;
+  line-height: 1.55;
+  margin-top: 30px;
+}
+#quests .quest-save {
+  color: var(--paper);
+  border-color: #788271;
+  font-size: 11px;
+  min-height: 44px;
+  margin-top: 20px;
+}
+#quests .quest-save[aria-pressed="true"] {
+  color: #d7dfb0;
+  border-color: #d7dfb0;
+}
+#quests .quest-number {
+  display: none;
+}
+#quests .quest-artwork {
+  height: 460px;
+  margin: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+#quests .quest-image-frame {
+  width: 100%;
+  max-width: 475px;
+  height: auto;
+  aspect-ratio: 475 / 270;
+  transform: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  transition: opacity 0.25s;
+}
+#quests .quest-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#quests .quest-object {
+  display: none;
+}
+#quests [data-quest="0"] .quest-object {
+  display: block;
+  width: 58px;
+  max-height: 69px;
+  right: 12%;
+  bottom: 8%;
+  transform: none;
+  filter: none;
+}
+#quests .quest-art-note {
+  transform: none;
+  left: auto;
+  right: 0;
+  bottom: 22px;
+  font-size: 9px;
+  color: #c2c8b9;
+}
+#quests [data-quest="1"] .quest-image-frame {
+  max-width: 445px;
+  aspect-ratio: 445 / 300;
+}
+#quests [data-quest="1"] .quest-artwork {
+  align-items: flex-end;
+  padding-bottom: 66px;
+}
+#quests [data-quest="2"] .quest-copy h3 {
+  font-size: clamp(66px, 7.2vw, 136px);
+  line-height: 0.94;
+}
+#quests [data-quest="2"] .quest-image-frame {
+  max-width: 330px;
+  aspect-ratio: 330 / 450;
+}
+#quests [data-quest="2"] .quest-artwork {
+  justify-content: center;
+}
+#quests [data-quest="2"] .quest-art-note {
+  right: 8%;
+  bottom: -10px;
+}
+#quests [data-quest="3"] {
+  grid-template-columns: 68% 32%;
+}
+#quests [data-quest="3"] .quest-copy h3 {
+  font-size: clamp(64px, 8.3vw, 157px);
+  line-height: 0.98;
+}
+#quests [data-quest="3"] .quest-image-frame {
+  max-width: 330px;
+  aspect-ratio: 511 / 259;
+}
+#quests [data-quest="3"] .quest-artwork {
+  align-items: flex-end;
+  padding-bottom: 98px;
+}
+#quests [data-quest="3"] .quest-art-note {
+  bottom: 65px;
+}
+#quests [data-quest="4"] .quest-copy h3 {
+  font-size: clamp(85px, 10.5vw, 195px);
+}
+#quests [data-quest="4"] .quest-image-frame {
+  max-width: 400px;
+  aspect-ratio: 560 / 410;
+  border: 10px solid var(--paper);
+  border-bottom-width: 35px;
+}
+#quests [data-quest="4"] .quest-artwork {
+  justify-content: center;
+}
+#quests [data-quest="5"] .quest-copy h3 {
+  font-size: clamp(64px, 7.3vw, 138px);
+  line-height: 0.94;
+}
+#quests [data-quest="5"] .quest-image-frame {
+  max-width: 478px;
+  aspect-ratio: 478 / 275;
+}
+#quests [data-quest="5"] .quest-artwork {
+  align-items: flex-start;
+  padding-top: 65px;
+}
+#quests .quest-controls {
+  border-color: #5e6959;
+  padding-top: 20px;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+#quests .quest-index {
+  gap: 8px;
+  flex: none;
+}
+#quests .quest-index button {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  color: #bbc4b3;
+  background: none;
+  font-size: 11px;
+}
+#quests .quest-index button:hover {
+  color: var(--paper);
+  background: none;
+}
+#quests .quest-index button[aria-pressed="true"] {
+  background: none;
+  color: var(--paper);
+  border-color: var(--paper);
+}
+#quests .quest-arrows {
+  gap: 6px;
+  margin-left: auto;
+}
+#quests .quest-arrows button {
+  border-radius: 0;
+  border: 0;
+  width: 48px;
+  height: 44px;
+  color: var(--paper);
+  font-size: 30px;
+}
+#quests .quest-arrows button:hover {
+  background: #3a4437;
+}
+#quests .quest-controls > .mono {
+  color: #c2c8b9;
+}
+#quests button:focus-visible {
+  outline-color: var(--paper);
+}
+
+/* Two routes, a familiar face, and one useful piece of context. */
+#people {
+  background: var(--paper);
+  color: var(--ink);
+  padding-block: clamp(80px, 9vw, 145px) 65px;
+}
+#people .section-meta {
+  color: #5f655b;
+}
+#people .people-heading {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  align-items: end;
+  gap: 14%;
+  margin-top: 50px;
+}
+#people h2 {
+  font-size: clamp(55px, 6.4vw, 105px);
+  line-height: 0.92;
+}
+#people h2 .serif-note {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 0.55em;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.045em;
+  margin-top: 15px;
+}
+#people .people-heading > p {
+  max-width: 310px;
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+}
+#people .people-explainer {
+  font-size: 13px;
+  color: #606659;
+  margin-top: 15px;
+}
+#people .people-scene {
+  height: 405px;
+  margin-top: 60px;
+}
+#people .people-paths {
+  top: 0;
+  height: 100%;
+}
+#people .people-paths path {
+  stroke: #939b89;
+  stroke-width: 1;
+  stroke-dasharray: 2 9;
+}
+#people .people-paths path + path {
+  stroke: #afb7a6;
+}
+#people .person-you {
+  left: 9%;
+  top: 49%;
+}
+#people .person-you img {
+  width: 62px;
+  height: 62px;
+  border: 0;
+  box-shadow: none;
+}
+#people .person-maya {
+  left: 35%;
+  right: auto;
+  top: 15px;
+  width: 255px;
+  transform: none;
+}
+#people .person-maya img {
+  border-radius: 0;
+  outline: 0;
+  aspect-ratio: 260 / 255;
+}
+#people .person-maya figcaption {
+  text-align: left;
+  font-size: 9px;
+  margin-top: 14px;
+}
+#people .people-crossing {
+  left: 19%;
+  top: 75%;
+  transform: none;
+  font-size: 9px;
+  max-width: 145px;
+}
+#people .people-context {
+  right: 0;
+  top: 38%;
+  width: 31%;
+  padding: 0 0 0 24px;
+  border-left: 1px solid #afb7a6;
+  transform: none;
+}
+#people .people-context p {
+  font-size: clamp(26px, 3vw, 46px);
+  line-height: 1.1;
+  min-height: 110px;
+}
+#people .context-mark {
+  font-size: 30px;
+  margin-top: 12px;
+}
+#people .people-scene[data-mode="crossed"] .person-you {
+  transform: translate(45px, -24px);
+}
+#people .people-scene[data-mode="crossed"] .person-maya {
+  transform: translate(-15px, 14px);
+}
+#people .people-scene[data-mode="crossed"] .people-crossing {
+  transform: translateY(-12px);
+}
+#people .people-scene[data-mode="crossed"] .people-context {
+  transform: none;
+}
+#people .people-controls {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px 35px;
+  border-color: #c9cdbf;
+  padding-top: 20px;
+  align-items: baseline;
+}
+#people .people-modes {
+  width: auto;
+  gap: 24px;
+  justify-content: flex-start;
+}
+#people .people-modes button {
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: #626959;
+  min-height: 44px;
+  font-size: 13px;
+  flex: none;
+}
+#people .people-modes button[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: none;
+}
+#people .context-options {
+  width: auto;
+  gap: 20px;
+  align-self: auto;
+  justify-content: flex-start;
+}
+#people .context-options button {
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 12px;
+  color: #626959;
+}
+#people .context-options button[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  #quests .quest-stage {
+    min-height: 520px;
+  }
+  #quests .quest-copy h3 {
+    font-size: 11vw;
+  }
+  #quests .quest-artwork {
+    height: 395px;
+  }
+  #quests [data-quest="2"] .quest-image-frame {
+    max-width: 270px;
+  }
+  #people .people-heading {
+    gap: 8%;
+  }
+  #people .person-maya {
+    left: 31%;
+    width: 220px;
+  }
+  #people .people-context {
+    width: 32%;
+  }
+}
+@media (max-width: 760px) {
+  #quests {
+    padding-block: 48px 28px;
+  }
+  #quests .section-meta {
+    gap: 24px;
+  }
+  #quests .section-meta > .mono {
+    max-width: 150px;
+  }
+  #quests .quest-stage {
+    display: flex;
+    min-height: clamp(700px, 112vw, 790px);
+    margin-top: 30px;
+    align-items: stretch;
+  }
+  #quests .quest-copy {
+    padding: 0;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+  }
+  #quests .quest-caption {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  #quests .quest-caption .mono {
+    font-size: 8px;
+  }
+  #quests .quest-copy h3 {
+    font-size: 26vw;
+    min-height: 0;
+  }
+  #quests .quest-copy p {
+    font-size: 14px;
+    max-width: 295px;
+    margin-top: 22px;
+  }
+  #quests .quest-save {
+    margin-top: 12px;
+  }
+  #quests .quest-artwork {
+    height: 285px;
+    margin-top: auto;
+    padding: 0;
+  }
+  #quests .quest-image-frame {
+    max-width: 475px;
+  }
+  #quests [data-quest="0"] .quest-object {
+    right: 8%;
+    bottom: 3px;
+    width: 45px;
+  }
+  #quests .quest-art-note {
+    bottom: 0;
+    font-size: 8px;
+  }
+  #quests [data-quest="1"] .quest-artwork {
+    padding: 0 0 25px;
+    height: 290px;
+  }
+  #quests [data-quest="2"] .quest-copy h3 {
+    font-size: 16.5vw;
+    line-height: 0.96;
+  }
+  #quests [data-quest="2"] .quest-artwork {
+    height: 385px;
+    padding-bottom: 30px;
+  }
+  #quests [data-quest="2"] .quest-image-frame {
+    width: 72%;
+    max-width: 260px;
+  }
+  #quests [data-quest="2"] .quest-art-note {
+    right: 0;
+    bottom: 0;
+  }
+  #quests [data-quest="3"] .quest-copy h3 {
+    font-size: 11.9vw;
+    line-height: 1;
+  }
+  #quests [data-quest="3"] .quest-copy h3::first-line {
+    font-size: 24vw;
+    line-height: 1;
+  }
+  #quests [data-quest="3"] .quest-artwork {
+    height: 255px;
+    padding-bottom: 35px;
+  }
+  #quests [data-quest="3"] .quest-image-frame {
+    width: 78%;
+    max-width: 300px;
+  }
+  #quests [data-quest="3"] .quest-art-note {
+    bottom: 0;
+  }
+  #quests [data-quest="4"] .quest-copy h3 {
+    font-size: 25vw;
+  }
+  #quests [data-quest="4"] .quest-artwork {
+    height: 315px;
+    padding-bottom: 24px;
+  }
+  #quests [data-quest="4"] .quest-image-frame {
+    width: 88%;
+    border-width: 8px;
+    border-bottom-width: 28px;
+  }
+  #quests [data-quest="5"] .quest-copy h3 {
+    font-size: 17vw;
+    line-height: 0.96;
+  }
+  #quests [data-quest="5"] .quest-artwork {
+    height: 290px;
+    padding-top: 25px;
+  }
+  #quests .quest-controls {
+    margin-top: 22px;
+    gap: 14px;
+  }
+  #quests .quest-index {
+    gap: 3px;
+  }
+  #quests .quest-index button {
+    width: 44px;
+  }
+  #quests .quest-arrows {
+    gap: 4px;
+  }
+  #quests .quest-controls > .mono {
+    display: block;
+    order: 3;
+    margin: 0;
+    width: 100%;
+  }
+  #people {
+    padding-block: 65px 38px;
+  }
+  #people .people-heading {
+    display: block;
+    margin-top: 32px;
+  }
+  #people h2 {
+    font-size: 13.6vw;
+    line-height: 0.95;
+  }
+  #people h2 .serif-note {
+    font-size: 0.64em;
+    margin-top: 12px;
+  }
+  #people .people-heading > p {
+    font-size: 16px;
+    max-width: 310px;
+    margin-top: 28px;
+  }
+  #people .people-scene {
+    height: 450px;
+    margin-top: 32px;
+  }
+  #people .people-paths {
+    top: 0;
+    height: 280px;
+  }
+  #people .person-maya {
+    width: 185px;
+    left: auto;
+    right: 0;
+    top: 12px;
+  }
+  #people .person-maya figcaption {
+    font-size: 8px;
+  }
+  #people .person-you {
+    left: 4%;
+    top: 38%;
+  }
+  #people .people-crossing {
+    left: 0;
+    top: 54%;
+    font-size: 8px;
+  }
+  #people .people-context {
+    top: 68%;
+    width: 100%;
+    padding: 22px 0 0;
+    border-left: 0;
+    border-top: 1px solid #c9cdbf;
+  }
+  #people .people-context p {
+    font-size: 28px;
+    min-height: 0;
+    max-width: 300px;
+    margin-top: 12px;
+  }
+  #people .context-mark {
+    position: absolute;
+    top: 14px;
+    right: 0;
+    font-size: 25px;
+  }
+  #people .people-controls {
+    gap: 14px;
+  }
+  #people .people-modes {
+    width: 100%;
+    gap: 25px;
+  }
+  #people .context-options {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  #people .context-options button {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #people .people-scene[data-mode="crossed"] .person-you,
+  #people .people-scene[data-mode="crossed"] .person-maya,
+  #people .people-scene[data-mode="crossed"] .people-crossing {
+    transform: none;
+  }
+}

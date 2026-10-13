@@ -1,0 +1,19 @@
+{
+  "name": "side-quest-campus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "node scripts/serve.mjs",
+    "check": "node --check src/main.js && node --check src/world.js && node --check src/journey.js && node --check src/campus-arc.js && node --check src/waitlist.js && node scripts/check.mjs && node --test scripts/beta.test.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.0"
+  }
+}
